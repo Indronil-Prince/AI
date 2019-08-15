@@ -1,0 +1,441 @@
+
+<!-- saved from url=(0057)https://petro.tanrei.ca/fuzzylogic/fuzzy_negnevistky.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__petro_tanrei_ca"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/"><title>Fuzzy Logic Example</title><style type="text/css">
+
+/*
+Author: Peter Parente
+Date: 2008/01/22
+Version: 1.0
+Copyright: This stylesheet has been placed in the public domain - free to edit and use for all uses.
+*/
+
+body {
+  /* font: 13.34px sans-serif; */
+  font-family: candara, serif;
+  font-size: 1.1em;
+  color: black;
+  width: 80%;
+  /* margin: 2em; */
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0em 2em;
+}
+
+p.topic-title {
+  font-weight: bold;
+}
+
+table.docinfo {
+  text-align: left;
+  margin: 2em 0em;
+}
+
+a[href] {
+  color: #436976;
+  background-color: transparent;
+}
+
+a.toc-backref {
+  text-decoration: none;
+}
+
+h1 a[href] {
+  color: #003a6b;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a.strong {
+  font-weight: bold;
+}
+
+img {
+  margin: 0;
+  border: 0;
+}
+
+p {
+  margin: 0.5em 0 1em 0;
+  line-height: 1.6em;
+}
+
+p a:visited {
+  color: purple;
+  background-color: transparent;
+}
+
+p a:active {
+  color: red;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p img {
+  border: 0;
+  margin: 0;
+}
+
+p.rubric {
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1.title {
+  color: #003a6b;
+  font-size: 150%;
+  margin-bottom: 0em;
+}
+
+h2.subtitle {
+  color: #003a6b;
+  border-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #555;
+  background-color: transparent;
+  margin: 0em;
+  padding-top: 0.5em;
+}
+
+h1 {
+  font-size: 125%;
+  margin-bottom: 0.7em;
+  border-bottom: 2px solid #aaa;
+}
+
+h2 {
+  font-size: 115%;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #aaa;
+}
+
+h3 {
+  font-size: 105%;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+dt {
+  font-style: italic;
+}
+
+dd {
+  margin-bottom: 1.5em;
+}
+
+div.admonition, div.note, div.tip, div.caution, div.important {
+  margin: 2em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+div.important {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+div.caution {
+  background: transparent url('../images/caution.png') 10px 2px no-repeat;
+}
+
+div.note {
+  background: transparent url('../images/note.png') 10px 2px no-repeat;
+}
+
+div.tip {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-example {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-critical-example {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+p.admonition-title {
+  font-weight: bold;
+  border-bottom: 1px solid #aaa;
+  padding-left: 30px;
+}
+
+table.docutils {
+  text-align: left;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0em;
+}
+
+table.docutils caption {
+  font-style: italic;
+}
+
+table.docutils td, table.docutils th {
+  padding: 0.25em 0.5em;
+}
+
+table.docutils th {
+  background-color: #dddddd;
+}
+
+div.sidebar {
+  width: 33%;
+  float: right;
+  margin: 0em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+p.sidebar-title {
+  margin-bottom: 0em;
+  color: #003a6b;
+  border-bottom: 1px solid #aaa;
+  font-weight: bold;
+}
+
+p.sidebar-subtitle {
+  margin-top: 0em;
+  font-style: italic;
+  color: #003a6b;
+}
+
+
+hr.footer {
+    margin-top: 2em;
+}
+
+div.footer {
+    font-size: 70%;
+}
+
+.literal-block { font-family: monaco, bitstream vera sans mono, monospace; 
+    background-color: #eee; padding: 0.2em; font-size: 0.85em; }
+.literal { font-family: monaco, bitstream vera sans mono, monospace; 
+    background-color: #eee; font-size: 0.9em; padding: 0.2em;}
+
+.highlight { background-color: #eee; padding: 0.5em; font-size: 0.85em;}
+.highlight .hll { background-color:#ffffcc }
+.highlight .c { color:#8f5902; font-style:italic } /* Comment */
+.highlight .err { color:#a40000; border:1px solid #ef2929 } /* Error */
+.highlight .g { color:#000000 } /* Generic */
+.highlight .k { color:#204a87; font-weight:bold } /* Keyword */
+.highlight .l { color:#000000 } /* Literal */
+.highlight .n { color:#000000 } /* Name */
+.highlight .o { color:#ce5c00; font-weight:bold } /* Operator */
+.highlight .x { color:#000000 } /* Other */
+.highlight .p { color:#000000; font-weight:bold } /* Punctuation */
+.highlight .cm { color:#8f5902; font-style:italic } /* Comment.Multiline */
+.highlight .cp { color:#8f5902; font-style:italic } /* Comment.Preproc */
+.highlight .c1 { color:#8f5902; font-style:italic } /* Comment.Single */
+.highlight .cs { color:#8f5902; font-style:italic } /* Comment.Special */
+.highlight .gd { color:#a40000 } /* Generic.Deleted */
+.highlight .ge { color:#000000; font-style:italic } /* Generic.Emph */
+.highlight .gr { color:#ef2929 } /* Generic.Error */
+.highlight .gh { color:#000080; font-weight:bold } /* Generic.Heading */
+.highlight .gi { color:#00A000 } /* Generic.Inserted */
+.highlight .go { color:#000000; font-style:italic } /* Generic.Output */
+.highlight .gp { color:#8f5902 } /* Generic.Prompt */
+.highlight .gs { color:#000000; font-weight:bold } /* Generic.Strong */
+.highlight .gu { color:#800080; font-weight:bold } /* Generic.Subheading */
+.highlight .gt { color:#a40000; font-weight:bold } /* Generic.Traceback */
+.highlight .kc { color:#204a87; font-weight:bold } /* Keyword.Constant */
+.highlight .kd { color:#204a87; font-weight:bold } /* Keyword.Declaration */
+.highlight .kn { color:#204a87; font-weight:bold } /* Keyword.Namespace */
+.highlight .kp { color:#204a87; font-weight:bold } /* Keyword.Pseudo */
+.highlight .kr { color:#204a87; font-weight:bold } /* Keyword.Reserved */
+.highlight .kt { color:#204a87; font-weight:bold } /* Keyword.Type */
+.highlight .ld { color:#000000 } /* Literal.Date */
+.highlight .m { color:#0000cf; font-weight:bold } /* Literal.Number */
+.highlight .s { color:#4e9a06 } /* Literal.String */
+.highlight .na { color:#c4a000 } /* Name.Attribute */
+.highlight .nb { color:#204a87 } /* Name.Builtin */
+.highlight .nc { color:#000000 } /* Name.Class */
+.highlight .no { color:#000000 } /* Name.Constant */
+.highlight .nd { color:#5c35cc; font-weight:bold } /* Name.Decorator */
+.highlight .ni { color:#ce5c00 } /* Name.Entity */
+.highlight .ne { color:#cc0000; font-weight:bold } /* Name.Exception */
+.highlight .nf { color:#000000 } /* Name.Function */
+.highlight .nl { color:#f57900 } /* Name.Label */
+.highlight .nn { color:#000000 } /* Name.Namespace */
+.highlight .nx { color:#000000 } /* Name.Other */
+.highlight .py { color:#000000 } /* Name.Property */
+.highlight .nt { color:#204a87; font-weight:bold } /* Name.Tag */
+.highlight .nv { color:#000000 } /* Name.Variable */
+.highlight .ow { color:#204a87; font-weight:bold } /* Operator.Word */
+.highlight .w { color:#f8f8f8; text-decoration:underline } /* Text.Whitespace */
+.highlight .mf { color:#0000cf; font-weight:bold } /* Literal.Number.Float */
+.highlight .mh { color:#0000cf; font-weight:bold } /* Literal.Number.Hex */
+.highlight .mi { color:#0000cf; font-weight:bold } /* Literal.Number.Integer */
+.highlight .mo { color:#0000cf; font-weight:bold } /* Literal.Number.Oct */
+.highlight .sb { color:#4e9a06 } /* Literal.String.Backtick */
+.highlight .sc { color:#4e9a06 } /* Literal.String.Char */
+.highlight .sd { color:#8f5902; font-style:italic } /* Literal.String.Doc */
+.highlight .s2 { color:#4e9a06 } /* Literal.String.Double */
+.highlight .se { color:#4e9a06 } /* Literal.String.Escape */
+.highlight .sh { color:#4e9a06 } /* Literal.String.Heredoc */
+.highlight .si { color:#4e9a06 } /* Literal.String.Interpol */
+.highlight .sx { color:#4e9a06 } /* Literal.String.Other */
+.highlight .sr { color:#4e9a06 } /* Literal.String.Regex */
+.highlight .s1 { color:#4e9a06 } /* Literal.String.Single */
+.highlight .ss { color:#4e9a06 } /* Literal.String.Symbol */
+.highlight .bp { color:#3465a4 } /* Name.Builtin.Pseudo */
+.highlight .vc { color:#000000 } /* Name.Variable.Class */
+.highlight .vg { color:#000000 } /* Name.Variable.Global */
+.highlight .vi { color:#000000 } /* Name.Variable.Instance */
+.highlight .il { color:#0000cf; font-weight:bold } /* Literal.Number.Integer.Long */
+
+.raw-math { font-size: 120%; }
+.align-center {display: block; margin: auto;}
+
+</style><script type="text/javascript" async="" src="./Fuzzy Logic Example_files/ga.js.download"></script><script src="./Fuzzy Logic Example_files/MathJax.js.download">
+        MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\(","\)"] ],
+            displayMath: [ ['$$','$$'], ["\[","\]"] ],
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+    </script></head><body data-gr-c-s-loaded="true">
+<div class="document" id="fuzzy-logic-example">
+<h1 class="title">Fuzzy Logic Example</h1>
+
+<p>This example is taken from the second edition of the "Artificial Intelligence:
+A Guide to Intelligent Systems" book by Michael Negnevistky.</p>
+<p>The problem is to estimate the level of risk involved in a software engineering
+project. For the sake of simplicity we will arrive at our conclusion based on
+two inputs: project funding and project staffing.</p>
+<div class="section" id="step-1">
+<h1>Step 1</h1>
+<p>The first step to convert the crisp input into a fuzzy one. Since we have two
+inputs we will have 2 crisp values to convert. The first value the level of
+project staffing. The second value is the level of project funding.</p>
+<p>Suppose our our inputs are <em>project_funding = 35%</em> and <em>project_staffing</em> =
+60%.  We can an get the fuzzy values for these crisp values by using the
+membership functions of the appropriate sets. The sets defined for
+<em>project_funding</em> are <strong>inadequate</strong>, <strong>marginal</strong> and <strong>adequate</strong>.
+The sets defined for <em>project_staffing</em> are <strong>small</strong> and <strong>large</strong>.</p>
+<p>Thus we have the following
+fuzzy values for <em>project_funding</em>:</p>
+<p><span class="raw-math">$$ \mu_{\text{funding}=\text{inadequate}}(35) = 0.5 $$</span></p>
+<p><span class="raw-math">$$\mu_{\text{funding}=\text{marginal}}(35) = 0.2$$</span></p>
+<p><span class="raw-math">$$\mu_{\text{funding}=\text{adequate}}(35) = 0.0$$</span></p>
+<p>The following a visual representation of this procedure:</p>
+<img alt="fuzzification1.png" class="align-center" src="./Fuzzy Logic Example_files/fuzzification1.png" style="width: 585.6px; height: 330.6px;"><p>The fuzzy values for <em>project_staffing</em> are shown below.</p>
+<p><span class="raw-math">$$\mu_{\text{staffing}=\text{small}}(60) = 0.1$$</span></p>
+<p><span class="raw-math">$$\mu_{\text{staffing}=\text{large}}(60) = 0.7$$</span></p>
+<p>The following is a visual representation of this procedure:</p>
+<img alt="fuzzification2.png" class="align-center" src="./Fuzzy Logic Example_files/fuzzification2.png" style="width: 585.6px; height: 330.6px;"><div class="section" id="the-rules">
+<h2>The Rules</h2>
+<p>Now that we have the fuzzy values we can use the fuzzy rules to arrive
+at the final fuzzy value. The rules are as follows:</p>
+<ol class="arabic simple"><li>If <em>project_funding</em> is <strong>adequate</strong> or <em>project_staffing</em> is small then risk is <strong>low</strong>.</li>
+<li>If <em>project_funding</em> is <strong>marginal</strong> and <em>project_staffing</em> is large then risk is <strong>normal</strong>.</li>
+<li>If <em>project_funding</em> is <strong>inadequate</strong> then risk is <strong>high</strong>.</li>
+</ol></div>
+<div class="section" id="rule-1-if-project-funding-is-adequate-or-project-staffing-is-small-then-risk-is-low">
+<h2>Rule 1 - If <em>project_funding</em> is <strong>adequate</strong> or <em>project_staffing</em> is <strong>small</strong> then risk is <strong>low</strong></h2>
+<p>Rules containing disjunctions, <em>OR</em>, are evaluated using the <em>UNION</em> operator.</p>
+<p><span class="raw-math">$$\mu_{A \cup B}(x) = max[\mu_A(x), \mu_B(x)]$$</span></p>
+<p><span class="raw-math">$$\mu_{\text{risk} = \text{low}} = max[\mu_{\text{funding}=\text{adequate}}(35), \mu_{\text{staffing}=\text{small}}(60)] = max[0.0, 0.1] = 0.1$$</span></p>
+<p>And alternative way of computing the disjunction is via the algebraic sum as shown below:</p>
+<p><span class="raw-math">$$\mu_{A \cup B}(x) = \mu_A(x) + \mu_B(x) - \mu_A(x) * \mu_B(x)$$</span></p>
+<p><span class="raw-math">$$\mu_{\text{risk} = \text{low}} = 0.0 + 0.1 - 0.0 * 0.1 = 0.1$$</span></p>
+</div>
+<div class="section" id="rule-2-if-project-funding-is-marginal-and-project-staffing-is-large-then-risk-is-normal">
+<h2>Rule 2 - If <em>project_funding</em> is <strong>marginal</strong> and <em>project_staffing</em> is large then risk is <strong>normal</strong></h2>
+<p>Conjunctions in fuzzy rules are evaluated using the <em>INTERSECTION</em> operator.</p>
+<p><span class="raw-math">$$\mu_{A \cap B}(x) = min[\mu_A(x), \mu_B(x)]$$</span></p>
+<p><span class="raw-math">$$\mu_{\text{risk} = \text{normal}} = max[\mu_{\text{funding}=\text{marginal}}(35), \mu_{\text{staffing}=\text{large}}(60)] = max[0.2, 0.7] = 0.2$$</span></p>
+<p>Alternatively the same rule can be evaluated using multiplication, as shown below:</p>
+<p><span class="raw-math">$$\mu_{A \cap B}(x) = \mu_A(x) * \mu_B(x)$$</span>
+<span class="raw-math">$$\mu_{\text{risk} = \text{normal}} = 0.2 * 0.7 = 0.14$$</span></p>
+</div>
+<div class="section" id="rule-3-if-project-funding-is-inadequate-then-risk-is-high">
+<h2>Rule 3 -  If <em>project_funding</em> is <strong>inadequate</strong> then risk is <strong>high</strong></h2>
+<p><span class="raw-math">$$\mu_{\text{risk} = \text{normal}} = 0.2 * 0.7 = 0.14$$</span></p>
+</div>
+<div class="section" id="rule-evaluation-results">
+<h2>Rule Evaluation Results</h2>
+<p>The result of evaluating the rules is shown below:</p>
+<p><span class="raw-math">$$\mu_{\text{risk}=\text{low}}(z)  = 0.1$$</span>
+<span class="raw-math">$$\mu_{\text{risk}=\text{normal}}(z) = 0.2$$</span>
+<span class="raw-math">$$\mu_{\text{risk}=\text{high}}(z) = 0.5$$</span></p>
+<p>We now use the results to <em>scale</em> or <em>clip</em> the consequent membership functions.
+Once again for the sake of simplicity we will clip each of the functions.</p>
+<p><span class="raw-math">$$\mu_{\text{risk}=\text{low}}(z)  = 0.1$$</span></p>
+<img alt="clipping1.png" class="align-center" src="./Fuzzy Logic Example_files/clipping1.png" style="width: 585.6px; height: 330.6px;"><p><span class="raw-math">$$\mu_{\text{risk}=\text{normal}}(z) = 0.2$$</span></p>
+<img alt="clipping2.png" class="align-center" src="./Fuzzy Logic Example_files/clipping2.png" style="width: 585.6px; height: 330.6px;"><p><span class="raw-math">$$\mu_{\text{risk}=\text{high}}(z) = 0.5$$</span></p>
+<img alt="clipping3.png" class="align-center" src="./Fuzzy Logic Example_files/clipping3.png" style="width: 585.6px; height: 330.6px;"><p>We perform a union on all of the scaled functions to obtain the final result. The result
+is again shown in green.</p>
+<img alt="clipping_all.png" class="align-center" src="./Fuzzy Logic Example_files/clipping_all.png" style="width: 585.6px; height: 330.6px;"></div>
+</div>
+<div class="section" id="defuzzification">
+<h1>Defuzzification</h1>
+<p>The defuzzification can be performed in several different ways. The most popular method is
+the <em>centroid method</em>.</p>
+<dl class="docutils"><dt>Centroid method</dt>
+<dd>Calculates the center of gravity for the area under the curve.</dd>
+</dl><p><span class="raw-math">$$COG = \frac{\sum_{x=a}^b \mu_A(\chi)x}{\sum_{x=a}^b \mu_A(\chi)}$$</span></p>
+<dl class="docutils"><dt>Bisector</dt>
+<dd>Vertical line that divides the region into two sub-regions of equal area. It is
+sometimes, but not always, coincident with the centroid line.</dd>
+<dt>Mean of maximum</dt>
+<dd>Assuming there is a plateau at the maximum value of the final function take
+the mean of the values it spans.</dd>
+<dt>Smallest value of maximum</dt>
+<dd>Assuming there is a plateau at the maximum value of the final function take
+the smallest of the values it spans.</dd>
+<dt>Largest value of maximum</dt>
+<dd>Assuming there is a plateau at the maximum value of the final function take
+the largest of the values it spans.</dd>
+</dl><p>We chose the <em>centroid method</em> to find the final non-fuzzy risk value
+associated with our project.  This is shown below.</p>
+<p><span class="raw-math">$$COG= \frac{(0 + 10 + 20)*0.1 + (30 + 40 + 50 + 60)*0.2 + (70 + 80 + 90 + 100)*0.5}{0.1*3 + 0.2*4 + 0.5*4} = 67.4$$</span></p>
+<p>The result is that this project has 67.4% risk associated with it given the definitions above.</p>
+</div>
+</div>
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-82056-11']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+
+</body></html>
